@@ -24,7 +24,7 @@ fn main() {
         age = 15,
         role = "trying to start programming",
         studying = ["Programming", "vry complex math ;-;", "English"],
-        interests = ["Textiles", "Plushies", "Project Sekai", "Fashion"],
+        interests = ["Space", "Plushies", "You!", "Fashion"],
         loves = ["Cats", "Mizuki", "Clothes", "Sleeping", "Music"]
     };
 
@@ -72,7 +72,7 @@ fn main() {
         年齢 = 15,
         役割 = "プログラミングを始めようとしている",
         勉強 = ["プログラミング", "とても複雑な数学 ;-;", "英語"],
-        趣味 = ["テキスタイル", "ぬいぐるみ", "プロジェクトセカイ", "ファッション"],
+        趣味 = ["テキスタイル", "ぬいぐるみ", "あなた！" , "ファッション"],
         大好き = ["猫", "暁山瑞希", "服", "寝ること", "音楽"]
     };
 

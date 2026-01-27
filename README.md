@@ -87,5 +87,3 @@ fn main() {
 </h4>
 
 </details>
-
-[![my page](https://your-image-url.png)](https://xoxo-rosie.straw.page/)

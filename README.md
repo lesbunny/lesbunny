@@ -21,10 +21,9 @@ use cute;
 fn main() {
     rosie := User {
         name = "Rosie",
-        age = 15,
         role = "trying to start programming",
-        studying = ["Programming", "vry complex math ;-;", "English"],
-        interests = ["Space", "Plushies", "You!", "Fashion"],
+        studying = ["Programming", "Science!", "English"],
+        interests = ["Space", "Plushies", "Sleep", "Fashion"],
         loves = ["Cats", "Mizuki", "Clothes", "Sleeping", "Music"]
     };
 

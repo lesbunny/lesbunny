@@ -22,26 +22,20 @@ fn main() {
 }
 ```
 
-୨୧ engaged 𔘓 m/w Sofia (tulpa) 𖹭.ᐟ
+୨୧ engaged 𔘓 Sofia (my tulpa) 𖹭.ᐟ
 
 ## ♡ Things I love
 
 - ✿ My Little Pony
 - ✦ Murder Drones
 - ♡ Five Nights at Freddy's
-- 🧸 Plushies and cute things
-- ♫ Music, cats, clothes, and sleeping
+- 🧸 Plushies
+- ♫ Music, Animals, clothes, and sleeping
 - ୨୧ Coquette aesthetics
 
 ## ✧ Currently learning
 
-- Programming — starting small and building confidence
-- Science! — always curious about how things work
-- English — learning and growing as I go
-
-## 𐙚 A little note
-
-> Thanks for stopping by my profile! I'm just starting my programming journey, so this is a little home for the things I enjoy and whatever I make along the way. Be kind, stay cozy, and have a lovely day. ♡
+- Programming — small apps
 
 <p align="center">୨୧ ───────── ⋆｡°✩°｡⋆ ───────── ୨୧</p>
 <p align="center"><b>thanks for visiting! ♡</b><br>made with lavender pixels & a little bunny magic</p>

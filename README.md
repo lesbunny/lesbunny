@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>୨୧ coquette lesbunny .ᐟ ݁ Ი𐑼ֶָ֢</b><br>
-  making my own little corner of the internet ♡
+  Wild LESBUNNY appeared ♡
 </p>
 
 <p align="center">⟡˙⋆───────────୨ৎ───────────⋆˙⟡</p>

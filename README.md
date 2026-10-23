@@ -8,10 +8,7 @@
 
 
 <picture>
-  <source media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-pacman-dark.svg?v=next-level-20261023" />
-  <source media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-pacman.svg?v=next-level-20261023" />
-  <img alt="Pac-Man chases ghosts, eats contribution dots, and advances to the next level"
-    src="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-pacman.svg?v=next-level-20261023" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg" />
+  <img alt="github-snake" src="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg" />
 </picture>

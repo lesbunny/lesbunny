@@ -9,9 +9,9 @@
 
 <picture>
   <source media="(prefers-color-scheme: dark)"
-    srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake-dark.svg?v=pacman-green-dots-20261023" />
+    srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-pacman-dark.svg?v=arcade-v2-20261023" />
   <source media="(prefers-color-scheme: light)"
-    srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg?v=pacman-green-dots-20261023" />
+    srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-pacman.svg?v=arcade-v2-20261023" />
   <img alt="GitHub contribution snake"
-    src="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg?v=pacman-green-dots-20261023" />
+    src="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-pacman.svg?v=arcade-v2-20261023" />
 </picture>

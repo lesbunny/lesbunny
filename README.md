@@ -13,5 +13,5 @@
   <source media="(prefers-color-scheme: light)"
     srcset="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg?v=pacman-blue-20261023" />
   <img alt="GitHub contribution snake"
-    src="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg" />
+    src="https://raw.githubusercontent.com/lesbunny/lesbunny/output/github-snake.svg?v=pacman-blue-20261023" />
 </picture>

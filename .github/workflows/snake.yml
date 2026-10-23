@@ -24,6 +24,51 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
+      - name: Animate lesbian pride colors from left to right
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          colors = ["#D52D00", "#EF7627", "#FF9A56", "#FFFFFF", "#D162A4", "#B55690", "#A30262"]
+          stops = [f"{i * 100 / (len(colors) - 1):.3f}%{{fill:{color}}}" for i, color in enumerate(colors)]
+          keyframes = "@keyframes lesbianWave{" + "".join(stops) + "100%{fill:" + colors[0] + "}}"
+
+          for path in Path("dist").glob("github-snake*.svg"):
+              svg = path.read_text(encoding="utf-8")
+
+              # Add the wave as a second animation, preserving the generator's snake animation.
+              svg, replaced = re.subn(
+                  r"animation:none 14500ms linear infinite;",
+                  "animation:none 14500ms linear infinite,lesbianWave 3.5s linear infinite;",
+                  svg,
+                  count=1,
+              )
+              if replaced != 1:
+                  raise SystemExit(f"Could not find the expected cell animation rule in {path}")
+
+              # Cells have an x-coordinate every 16 units. A staggered delay makes the color wave move right.
+              cell_pattern = re.compile(r'<rect class="([^"]*\\bc\\b[^"]*)" x="(-?\\d+(?:\\.\\d+)?)"')
+              def stagger_cell(match):
+                  x = float(match.group(2))
+                  column = round((x - 2) / 16)
+                  delay = -3.3 + column * 0.055
+                  return f'<rect class="{match.group(1)}" x="{match.group(2)}" style="animation-delay:0s,{delay:.3f}s"'
+
+              svg, cells = cell_pattern.subn(stagger_cell, svg)
+              if cells < 100:
+                  raise SystemExit(f"Expected many grid cells in {path}, only matched {cells}")
+
+              # Keep the snake-eating class animation and add the lesbian-color animation to those cells too.
+              svg = re.sub(r"animation-name:(c[a-z0-9]+)", r"animation-name:\\1,lesbianWave", svg)
+              if "</style>" not in svg:
+                  raise SystemExit(f"Could not find SVG stylesheet in {path}")
+              svg = svg.replace("</style>", keyframes + "</style>", 1)
+              path.write_text(svg, encoding="utf-8")
+              print(f"Added looping lesbian-flag color wave to {path} ({cells} cells)")
+          PY
+
       - name: Publish animations to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:

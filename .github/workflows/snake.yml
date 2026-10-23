@@ -49,7 +49,7 @@ jobs:
                   raise SystemExit(f"Could not find the expected cell animation rule in {path}")
 
               # Cells have an x-coordinate every 16 units. A staggered delay makes the color wave move right.
-              cell_pattern = re.compile(r'<rect class="([^"]*\bc\b[^"]*)" x="(-?\d+(?:\.\d+)?)"')
+              cell_pattern = re.compile(r'<rect class="(c[^"]*)" x="([0-9.]+)"')
               def stagger_cell(match):
                   x = float(match.group(2))
                   column = round((x - 2) / 16)
@@ -61,7 +61,7 @@ jobs:
                   raise SystemExit(f"Expected many grid cells in {path}, only matched {cells}")
 
               # Keep snake cell classes and add the lesbian-color animation as a second animation.
-              svg = re.sub(r"animation-name:(c[a-z0-9]+)", r"animation-name:\1,lesbianWave", svg)
+              svg = re.sub(r"animation-name:(c[a-z0-9]+)", lambda match: "animation-name:" + match.group(1) + ",lesbianWave", svg)
               if "</style>" not in svg:
                   raise SystemExit(f"Could not find SVG stylesheet in {path}")
               svg = svg.replace("</style>", keyframes + "</style>", 1)

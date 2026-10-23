@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Generate snake animations
+      - name: Generate contribution snake
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: lesbunny
@@ -24,7 +24,7 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Animate lesbian pride colors from left to right
+      - name: Animate lesbian pride colors and add Pac-Man ghosts
         shell: bash
         run: |
           python3 - <<'PY'
@@ -33,22 +33,41 @@ jobs:
 
           colors = ["#D52D00", "#EF7627", "#FF9A56", "#FFFFFF", "#D162A4", "#B55690", "#A30262"]
           stops = [f"{i * 100 / len(colors):.3f}%{{fill:{color}}}" for i, color in enumerate(colors)]
-          keyframes = "@keyframes lesbianWave{" + "".join(stops) + "100%{fill:" + colors[0] + "}}"
+          wave = "@keyframes lesbianWave{" + "".join(stops) + "100%{fill:" + colors[0] + "}}"
+
+          pacman = """<g class="s s0 pacman"><path class="pacman-body" d="M 8 8 L 14.8 3.9 A 7.94 7.94 0 1 0 14.8 12.1 Z"/><circle class="pacman-eye" cx="9.5" cy="3.8" r="1.1"/></g>"""
+          ghosts = {
+              "s1": """<g class="s s1 ghost ghost-pink"><path class="ghost-body" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghost-eye" cx="5" cy="6.4" r="1.65"/><circle class="ghost-eye" cx="9" cy="6.4" r="1.65"/><circle class="ghost-pupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghost-pupil" cx="9.5" cy="6.4" r=".72"/></g>""",
+              "s2": """<g class="s s2 ghost ghost-cyan"><path class="ghost-body" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghost-eye" cx="5" cy="6.4" r="1.65"/><circle class="ghost-eye" cx="9" cy="6.4" r="1.65"/><circle class="ghost-pupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghost-pupil" cx="9.5" cy="6.4" r=".72"/></g>""",
+              "s3": """<g class="s s3 ghost ghost-orange"><path class="ghost-body" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghost-eye" cx="5" cy="6.4" r="1.65"/><circle class="ghost-eye" cx="9" cy="6.4" r="1.65"/><circle class="ghost-pupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghost-pupil" cx="9.5" cy="6.4" r=".72"/></g>"""
+          }
+
+          extra_css = """
+          .c{stroke-width:1.15px;stroke:#4a173e;stroke-opacity:.88}
+          .pacman-body{fill:#ffdc28;stroke:#b77c00;stroke-width:1.05px;stroke-linejoin:round}
+          .pacman-eye{fill:#211526;stroke:none}
+          .ghost-body{stroke-width:1px;stroke-linejoin:round}
+          .ghost-pink .ghost-body{fill:#ff4fa3;stroke:#a51c61}
+          .ghost-cyan .ghost-body{fill:#52d9ff;stroke:#147da3}
+          .ghost-orange .ghost-body{fill:#ff9b42;stroke:#b95b17}
+          .ghost-eye{fill:#fff;stroke:none}
+          .ghost-pupil{fill:#29324b;stroke:none}
+          """
 
           for path in Path("dist").glob("github-snake*.svg"):
               svg = path.read_text(encoding="utf-8")
 
-              # Add the wave as a second animation, preserving the generator's snake animation.
-              svg, replaced = re.subn(
-                  r"animation:none 14500ms linear infinite;",
-                  "animation:none 14500ms linear infinite,lesbianWave 3.5s linear infinite;",
+              grid_stroke = "#4a173e" if path.name == "github-snake.svg" else "#f6b8dc"
+              svg, stroke_rule = re.subn(
+                  r'\.c\{shape-rendering:geometricPrecision;fill:var\(--ce\);stroke-width:1px;stroke:var\(--cb\);',
+                  f'.c{{shape-rendering:geometricPrecision;fill:var(--ce);stroke-width:1.15px;stroke:{grid_stroke};stroke-opacity:.88;',
                   svg,
                   count=1,
               )
-              if replaced != 1:
-                  raise SystemExit(f"Could not find the expected cell animation rule in {path}")
+              if stroke_rule != 1:
+                  raise SystemExit(f"Could not set visible grid-dot outlines in {path}")
 
-              # Cells have an x-coordinate every 16 units. A staggered delay makes the color wave move right.
+              # Stagger each square's lesbian-flag color animation by column for a left-to-right wave.
               cell_pattern = re.compile(r'<rect class="(c[^"]*)" x="([0-9.]+)"')
               def stagger_cell(match):
                   x = float(match.group(2))
@@ -58,18 +77,33 @@ jobs:
 
               svg, cells = cell_pattern.subn(stagger_cell, svg)
               if cells < 100:
-                  raise SystemExit(f"Expected many grid cells in {path}, only matched {cells}")
+                  raise SystemExit(f"Expected many contribution squares in {path}; found {cells}")
 
-              # Keep snake cell classes and add the lesbian-color animation as a second animation.
-              svg = re.sub(r"animation-name:(c[a-z0-9]+)", lambda match: "animation-name:" + match.group(1) + ",lesbianWave", svg)
-              if "</style>" not in svg:
-                  raise SystemExit(f"Could not find SVG stylesheet in {path}")
-              svg = svg.replace("</style>", keyframes + "</style>", 1)
+              # Add the wave without removing the generator's original contribution/snake timing.
+              svg = re.sub(
+                  r"animation-name:(c[a-z0-9]+)",
+                  lambda match: "animation-name:" + match.group(1) + ",lesbianWave",
+                  svg,
+              )
+
+              # Make the animated lead segment Pac-Man and the following segments colorful ghosts.
+              for segment, artwork in [("s0", pacman), *ghosts.items()]:
+                  svg, count = re.subn(r'<rect class="s ' + segment + r'"[^>]*/>', lambda _match, a=artwork: a, svg, count=1)
+                  if count != 1:
+                      raise SystemExit(f"Could not replace snake segment {segment} in {path}")
+
+              if "</style>" not in svg or "</svg>" not in svg:
+                  raise SystemExit(f"Unexpected SVG structure in {path}")
+
+              css = extra_css
+              if path.name.endswith("-dark.svg"):
+                  css = css.replace("stroke:#4a173e", "stroke:#f6b8dc")
+              svg = svg.replace("</style>", css + wave + "</style>", 1)
               path.write_text(svg, encoding="utf-8")
-              print(f"Added looping lesbian-flag color wave to {path} ({cells} cells)")
+              print(f"Updated {path}: {cells} outlined squares, Pac-Man, and 3 ghosts")
           PY
 
-      - name: Publish animations to output branch
+      - name: Publish animations
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
           target_branch: output

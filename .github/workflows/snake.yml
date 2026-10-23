@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Generate contribution snake
+      - name: Generate contribution grid
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: lesbunny
@@ -24,7 +24,7 @@ jobs:
             dist/github-snake.svg
             dist/github-snake-dark.svg?palette=github-dark
 
-      - name: Animate lesbian pride colors and add Pac-Man ghosts
+      - name: Style the grid and animate Pac-Man with edible blue ghosts
         shell: bash
         run: |
           python3 - <<'PY'
@@ -32,75 +32,86 @@ jobs:
           import re
 
           colors = ["#D52D00", "#EF7627", "#FF9A56", "#FFFFFF", "#D162A4", "#B55690", "#A30262"]
-          stops = [f"{i * 100 / len(colors):.3f}%{{fill:{color}}}" for i, color in enumerate(colors)]
-          wave = "@keyframes lesbianWave{" + "".join(stops) + "100%{fill:" + colors[0] + "}}"
+          stops = "".join(f"{i * 100 / len(colors):.3f}%{{fill:{color}}}" for i, color in enumerate(colors))
+          wave_css = "@keyframes lesbianWave{" + stops + "100%{fill:" + colors[0] + "}}"
 
-          pacman = """<g class="s s0 pacman"><path class="pacman-body" d="M 8 8 L 14.8 3.9 A 7.94 7.94 0 1 0 14.8 12.1 Z"/><circle class="pacman-eye" cx="9.5" cy="3.8" r="1.1"/></g>"""
-          ghosts = {
-              "s1": """<g class="s s1 ghost ghost-pink"><path class="ghost-body" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghost-eye" cx="5" cy="6.4" r="1.65"/><circle class="ghost-eye" cx="9" cy="6.4" r="1.65"/><circle class="ghost-pupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghost-pupil" cx="9.5" cy="6.4" r=".72"/></g>""",
-              "s2": """<g class="s s2 ghost ghost-cyan"><path class="ghost-body" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghost-eye" cx="5" cy="6.4" r="1.65"/><circle class="ghost-eye" cx="9" cy="6.4" r="1.65"/><circle class="ghost-pupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghost-pupil" cx="9.5" cy="6.4" r=".72"/></g>""",
-              "s3": """<g class="s s3 ghost ghost-orange"><path class="ghost-body" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghost-eye" cx="5" cy="6.4" r="1.65"/><circle class="ghost-eye" cx="9" cy="6.4" r="1.65"/><circle class="ghost-pupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghost-pupil" cx="9.5" cy="6.4" r=".72"/></g>"""
-          }
+          # All overlays live in a 16x16 grid cell and get their own route animation.
+          pacman = """<g class="pacmanOverlay"><path class="pacmanBody" d="M8 8 L14.8 3.9 A7.94 7.94 0 1 0 14.8 12.1 Z"/><circle class="pacmanEye" cx="9.5" cy="3.8" r="1.1"/></g>"""
+          ghost = """<g class="{cls}"><path class="ghostBody" d="M2 13V6.5a5 5 0 0 1 10 0V13L9.5 11L7 13L4.5 11Z"/><circle class="ghostEye" cx="5" cy="6.4" r="1.65"/><circle class="ghostEye" cx="9" cy="6.4" r="1.65"/><circle class="ghostPupil" cx="5.5" cy="6.4" r=".72"/><circle class="ghostPupil" cx="9.5" cy="6.4" r=".72"/><path class="ghostMouth" d="M4.5 9.6L6 10.7L7.5 9.6L9 10.7L10.5 9.6"/></g>"""
+          overlays = (
+              pacman
+              + ghost.format(cls="ghostOverlay1")
+              + ghost.format(cls="ghostOverlay2")
+              + ghost.format(cls="ghostOverlay3")
+          )
 
-          extra_css = """
-          .c{stroke-width:1.15px;stroke:#4a173e;stroke-opacity:.88}
-          .pacman-body{fill:#ffdc28;stroke:#b77c00;stroke-width:1.05px;stroke-linejoin:round}
-          .pacman-eye{fill:#211526;stroke:none}
-          .ghost-body{stroke-width:1px;stroke-linejoin:round}
-          .ghost-pink .ghost-body{fill:#ff4fa3;stroke:#a51c61}
-          .ghost-cyan .ghost-body{fill:#52d9ff;stroke:#147da3}
-          .ghost-orange .ghost-body{fill:#ff9b42;stroke:#b95b17}
-          .ghost-eye{fill:#fff;stroke:none}
-          .ghost-pupil{fill:#29324b;stroke:none}
+          css = """
+          rect.s{opacity:0}
+          .pacmanOverlay{transform-box:view-box;transform-origin:0px 0px;animation:s0 14500ms linear infinite}
+          .ghostOverlay1{transform-box:view-box;transform-origin:0px 0px;animation:s1 14500ms linear infinite}
+          .ghostOverlay2{transform-box:view-box;transform-origin:0px 0px;animation:s2 14500ms linear infinite}
+          .ghostOverlay3{transform-box:view-box;transform-origin:0px 0px;animation:s3 14500ms linear infinite}
+          .pacmanBody{fill:#ffdc28;stroke:#b77c00;stroke-width:1.05px;stroke-linejoin:round}
+          .pacmanEye{fill:#211526;stroke:none}
+          .ghostBody{fill:#2121de;stroke:#101087;stroke-width:1px;stroke-linejoin:round}
+          .ghostEye{fill:#fff;stroke:none}
+          .ghostPupil{fill:#10104d;stroke:none}
+          .ghostMouth{fill:none;stroke:#fff;stroke-width:1.1px;stroke-linecap:round;stroke-linejoin:round}
           """
 
           for path in Path("dist").glob("github-snake*.svg"):
               svg = path.read_text(encoding="utf-8")
+              dark = path.name.endswith("-dark.svg")
+              grid_stroke = "#f5b6dd" if dark else "#6d2857"
 
-              grid_stroke = "#4a173e" if path.name == "github-snake.svg" else "#f6b8dc"
-              svg, stroke_rule = re.subn(
+              # Make the small cells distinguishable on both light and dark backgrounds.
+              svg, count = re.subn(
                   r'\.c\{shape-rendering:geometricPrecision;fill:var\(--ce\);stroke-width:1px;stroke:var\(--cb\);',
-                  f'.c{{shape-rendering:geometricPrecision;fill:var(--ce);stroke-width:1.15px;stroke:{grid_stroke};stroke-opacity:.88;',
+                  f'.c{{shape-rendering:geometricPrecision;fill:var(--ce);stroke-width:1.25px;stroke:{grid_stroke};stroke-opacity:.95;',
                   svg,
                   count=1,
               )
-              if stroke_rule != 1:
-                  raise SystemExit(f"Could not set visible grid-dot outlines in {path}")
+              if count != 1:
+                  raise SystemExit(f"Could not make dot outlines visible in {path}")
 
-              # Stagger each square's lesbian-flag color animation by column for a left-to-right wave.
+              # Ordinary squares all get the pride-color wave; active squares also keep their eaten-dot animation.
+              svg, count = re.subn(
+                  r'(\.c\{[^{}]*?)animation:none 14500ms linear infinite;',
+                  r'\1animation:lesbianWave 3.5s linear infinite;',
+                  svg,
+                  count=1,
+              )
+              if count != 1:
+                  raise SystemExit(f"Could not set the base color-wave animation in {path}")
+
+              svg = re.sub(
+                  r"animation-name:(c[a-z0-9]+)(?=})",
+                  lambda m: "animation-name:" + m.group(1) + ",lesbianWave;animation-duration:14500ms,3.5s",
+                  svg,
+              )
+
               cell_pattern = re.compile(r'<rect class="(c[^"]*)" x="([0-9.]+)"')
               def stagger_cell(match):
                   x = float(match.group(2))
                   column = round((x - 2) / 16)
                   delay = -3.3 + column * 0.055
-                  return f'<rect class="{match.group(1)}" x="{match.group(2)}" style="animation-delay:0s,{delay:.3f}s"'
+                  if match.group(1) == "c":
+                      style = f"animation-delay:{delay:.3f}s"
+                  else:
+                      style = f"animation-delay:0s,{delay:.3f}s"
+                  return f'<rect class="{match.group(1)}" x="{match.group(2)}" style="{style}"'
 
               svg, cells = cell_pattern.subn(stagger_cell, svg)
               if cells < 100:
-                  raise SystemExit(f"Expected many contribution squares in {path}; found {cells}")
+                  raise SystemExit(f"Expected hundreds of grid cells in {path}; matched {cells}")
 
-              # Add the wave without removing the generator's original contribution/snake timing.
-              svg = re.sub(
-                  r"animation-name:(c[a-z0-9]+)",
-                  lambda match: "animation-name:" + match.group(1) + ",lesbianWave",
-                  svg,
-              )
-
-              # Make the animated lead segment Pac-Man and the following segments colorful ghosts.
-              for segment, artwork in [("s0", pacman), *ghosts.items()]:
-                  svg, count = re.subn(r'<rect class="s ' + segment + r'"[^>]*/>', lambda _match, a=artwork: a, svg, count=1)
-                  if count != 1:
-                      raise SystemExit(f"Could not replace snake segment {segment} in {path}")
-
-              if "</style>" not in svg or "</svg>" not in svg:
+              if "</style>" not in svg or not svg.endswith("</svg>"):
                   raise SystemExit(f"Unexpected SVG structure in {path}")
 
-              css = extra_css
-              if path.name.endswith("-dark.svg"):
-                  css = css.replace("stroke:#4a173e", "stroke:#f6b8dc")
-              svg = svg.replace("</style>", css + wave + "</style>", 1)
+              svg = svg.replace("</style>", css + wave_css + "</style>", 1)
+              svg = svg[:-6] + overlays + "</svg>"
               path.write_text(svg, encoding="utf-8")
-              print(f"Updated {path}: {cells} outlined squares, Pac-Man, and 3 ghosts")
+              print(f"Styled {path}: {cells} outlined pride-wave dots, Pac-Man and 3 edible-blue ghosts")
           PY
 
       - name: Publish animations

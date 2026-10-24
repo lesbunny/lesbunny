@@ -5,5 +5,5 @@
 </p>
 
 <p align="center">
-  <sub>𐙚 about me thing bc who needs strawpage ♡</sub>
+  <sub>𐙚 about me thing bc who needs strawpage press on bunnies ♡</sub>
 </p>

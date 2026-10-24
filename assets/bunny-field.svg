@@ -1,82 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="900" height="180" viewBox="0 0 900 180" role="img" aria-labelledby="title desc">
   <title id="title">Little bunnies hopping in a breezy field</title>
-  <desc id="desc">Several tiny rabbits hop among soft grass and little wildflowers under a pale sky.</desc>
+  <desc id="desc">Six tiny rabbits hop in different rhythms among soft grass and wildflowers while a gentle breeze moves through the meadow.</desc>
   <defs>
-    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#edf7fb"/><stop offset="1" stop-color="#f7fbf0"/></linearGradient>
-    <linearGradient id="meadow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c8e8b6"/><stop offset="1" stop-color="#98ce89"/></linearGradient>
-    <g id="rabbit">
-      <g fill="#faf0df" stroke="#acb8a7" stroke-width=".85" stroke-linejoin="round">
-        <path d="M14.8-11.2Q11.8-20.9 14.8-24.6Q18-26.1 18.5-17.8L18.4-10.4Z"/>
-        <path d="M17.4-10.5Q17-19.6 20.7-21.1Q23.1-20.4 21.1-13.2L19.8-9.4Z"/>
-        <path d="M15.3-13.3Q14.2-19.4 15.1-22.2" fill="none" stroke="#e3a1af" stroke-width="1" stroke-linecap="round"/>
-        <path d="M2.1-5.4Q1.7-9.5 5.7-10.4Q9.7-11.7 13.1-9.7Q17-8.4 17.8-5.3Q18.2-2.7 14.1-2.1L6.2-2Q2.1-2.1 2.1-5.4Z"/>
-        <ellipse cx="3.2" cy="-5.2" rx="2.1" ry="2.2" fill="#fff8ec"/>
-        <ellipse cx="8.5" cy="-2.1" rx="2.5" ry="1.1"/>
-        <ellipse cx="14.2" cy="-2.1" rx="2.2" ry=".95"/>
-        <circle cx="17.4" cy="-9.3" r="3.8"/>
-      </g>
-      <circle cx="18.7" cy="-9.7" r=".58" fill="#554e4a"/>
-      <circle cx="19" cy="-9.9" r=".2" fill="#fff"/>
-      <ellipse cx="16.4" cy="-7.8" rx=".8" ry=".45" fill="#e9aab6"/>
-      <path d="M19.6-7.6l1.1.2" fill="none" stroke="#aa8586" stroke-width=".55" stroke-linecap="round"/>
-      <circle cx="1.8" cy="-5.8" r="2" fill="#faf0df" stroke="#acb8a7" stroke-width=".7"/>
-    </g>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#edf6fa"/><stop offset="1" stop-color="#f8fbf1"/>
+    </linearGradient>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c8e5b5"/><stop offset="1" stop-color="#a2d38f"/>
+    </linearGradient>
     <style>
-      .cloud { animation: cloud-drift 25s ease-in-out infinite alternate; }
-      .c2 { animation-duration: 34s; animation-delay: -13s; }
-      .bunny { animation: hop 2.9s ease-in-out infinite; transform-box: fill-box; transform-origin: 50% 100%; }
-      .b2 { animation-delay: -.9s; animation-duration: 3.3s; }
-      .b3 { animation-delay: -1.7s; animation-duration: 2.7s; }
-      .b4 { animation-delay: -2.2s; animation-duration: 3.5s; }
-      .b5 { animation-delay: -.45s; animation-duration: 3.1s; }
-      .b6 { animation-delay: -1.35s; animation-duration: 3.4s; }
-      .b7 { animation-delay: -2.55s; animation-duration: 3.15s; }
-      .grass { animation: sway 3.2s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
-      .g2 { animation-delay: -1.2s; animation-duration: 4.1s; }
-      .g3 { animation-delay: -.65s; animation-duration: 3.7s; }
-      .breeze { animation: breeze 7s ease-in-out infinite; }
-      .br2 { animation-delay: -3.2s; animation-duration: 8.5s; }
-      @keyframes cloud-drift { from { transform: translateX(-8px); } to { transform: translateX(14px); } }
-      @keyframes breeze { 0%,100% { transform: translateX(-4px); opacity: .2; } 50% { transform: translateX(9px); opacity: .7; } }
-      @keyframes hop {
-        0%, 56%, 100% { transform: translate(0,0) scale(1,1); }
-        7% { transform: translate(0,1px) scale(1.09,.84); }
-        18% { transform: translate(1px,-5px) scale(.95,1.08); }
-        30% { transform: translate(3px,-8px) scale(.97,1.04); }
-        42% { transform: translate(4px,0) scale(1.08,.88); }
-        49% { transform: translate(4px,0) scale(1,1); }
+      @media (prefers-reduced-motion: reduce) {
+        animate, animateMotion, animateTransform { display: none; }
       }
-      @keyframes sway { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
-      @media (prefers-reduced-motion: reduce) { .cloud,.bunny,.grass,.breeze { animation: none !important; } }
     </style>
   </defs>
   <rect width="900" height="180" rx="12" fill="url(#sky)"/>
-  <circle cx="791" cy="30" r="13" fill="#ffe8ae" opacity=".85"/>
-  <g class="cloud" fill="#fff" opacity=".86"><ellipse cx="123" cy="34" rx="24" ry="7"/><circle cx="113" cy="30" r="8"/><circle cx="129" cy="28" r="11"/><circle cx="143" cy="33" r="6"/></g>
-  <g class="cloud c2" fill="#fff" opacity=".72"><ellipse cx="590" cy="48" rx="19" ry="5.5"/><circle cx="582" cy="45" r="6"/><circle cx="595" cy="42" r="8"/></g>
-  <g class="breeze" fill="none" stroke="#a5cdc2" stroke-width="1.5" stroke-linecap="round"><path d="M232 64q11-5 22 0t21-1"/><path d="M260 73q7-3 14 0"/><path d="M657 67q10-5 20 0t17-1"/></g>
-  <g class="breeze br2" fill="none" stroke="#a5cdc2" stroke-width="1.3" stroke-linecap="round"><path d="M459 41q9-4 18 0t16-1"/></g>
-  <path d="M0 111Q94 81 183 103T365 96T542 100T717 91T900 98V180H0Z" fill="#d9edca"/>
-  <path d="M0 129Q120 101 235 121T442 114T650 117T900 111V180H0Z" fill="#c4e4ae"/>
-  <path d="M0 143Q123 125 238 138T455 132T674 137T900 128V180H0Z" fill="url(#meadow)"/>
+  <circle cx="800" cy="31" r="12" fill="#ffe9b7" opacity=".88"/>
 
-  <!-- Little rabbits at different depths; the grass hides their feet and part of their bodies. -->
-  <g transform="translate(97 155) scale(.72)"><g class="bunny"><use href="#rabbit"/></g></g>
-  <g transform="translate(247 151) scale(.84)"><g class="bunny b2"><use href="#rabbit"/></g></g>
-  <g transform="translate(401 158) scale(.64)"><g class="bunny b3"><use href="#rabbit"/></g></g>
-  <g transform="translate(549 152) scale(.88)"><g class="bunny b4"><use href="#rabbit"/></g></g>
-  <g transform="translate(635 156) scale(.56)"><g class="bunny b5"><use href="#rabbit"/></g></g>
-  <g transform="translate(700 157) scale(.72)"><g class="bunny b6"><use href="#rabbit"/></g></g>
-  <g transform="translate(823 151) scale(.78)"><g class="bunny b7"><use href="#rabbit"/></g></g>
-
-  <g stroke="#78b578" stroke-width="1.15" stroke-linecap="round" fill="none"><path d="M59 151v-10m0 7-3-3m3 5 4-3"/><path d="M181 155v-9m0 6-3-3m3 4 4-3"/><path d="M358 149v-8m0 5-3-3m3 4 4-3"/><path d="M629 154v-9m0 6-3-3m3 4 4-3"/><path d="M877 151v-10m0 7-3-3m3 4 4-3"/></g>
-  <g fill="#fff7fc"><circle cx="59" cy="140" r="2.3"/><circle cx="56.7" cy="138" r="1.7"/><circle cx="61.5" cy="138" r="1.7"/><circle cx="181" cy="145" r="2"/><circle cx="179" cy="143" r="1.5"/><circle cx="183" cy="143" r="1.5"/><circle cx="358" cy="140" r="2"/><circle cx="356" cy="138" r="1.5"/><circle cx="360" cy="138" r="1.5"/><circle cx="629" cy="145" r="2"/><circle cx="627" cy="143" r="1.5"/><circle cx="631" cy="143" r="1.5"/><circle cx="877" cy="140" r="2"/><circle cx="875" cy="138" r="1.5"/><circle cx="879" cy="138" r="1.5"/></g>
-
-  <g fill="none" stroke-linecap="round">
-    <g class="grass" stroke="#69b164" stroke-width="1.8"><path d="M22 180q-3-15-9-22M22 180q6-17 12-22M22 180q-1-11-8-13M97 180q-2-26 2-31M106 180q-1-21 6-25M133 180q-4-18-11-23M133 180q5-14 12-18M220 180q-2-22-9-32M229 180q4-20 10-26"/></g>
-    <g class="grass g2" stroke="#5ca65e" stroke-width="2"><path d="M250 180q-2-23 2-27M259 180q0-22 8-25M292 180q-3-17-11-22M292 180q5-20 13-26M379 180q-4-19-12-24M379 180q5-14 11-18M401 180q-1-26 2-30M410 180q4-21 11-23M463 180q-4-18-11-23M463 180q6-18 14-22"/></g>
-    <g class="grass g3" stroke="#68b363" stroke-width="1.9"><path d="M542 180q-2-25 4-30M551 180q1-23 8-26M590 180q-4-17-11-23M590 180q5-16 13-21M657 180q-3-16-10-21M657 180q6-18 13-23M695 180q-1-25 5-30M704 180q4-21 11-24M758 180q-4-18-12-23M758 180q5-17 13-21"/></g>
-    <g class="grass" stroke="#5ba65e" stroke-width="2"><path d="M817 180q-1-27 5-31M829 180q4-22 12-25M854 180q-4-17-12-22M854 180q6-16 13-21M891 180q-3-15-9-20"/></g>
+  <g transform="translate(122 38)">
+    <g fill="#fff" opacity=".9">
+      <ellipse cx="0" cy="0" rx="20" ry="6.5"/><circle cx="-9" cy="-3" r="7.5"/><circle cx="3" cy="-5" r="9.5"/><circle cx="13" cy="-1" r="6"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate" dur="27s" repeatCount="indefinite"
+      calcMode="spline" values="122 38;138 38;150 38;134 38;122 38" keyTimes="0;.3;.58;.82;1"
+      keySplines="0.35 0 0.65 1;0.35 0 0.65 1;0.35 0 0.65 1;0.35 0 0.65 1"/>
   </g>
-  <path d="M0 168Q115 162 220 170T430 167T660 170T900 164V180H0Z" fill="#9bd08a" opacity=".54"/>
+  <g transform="translate(575 57)">
+    <g fill="#fff" opacity=".76">
+      <ellipse cx="0" cy="0" rx="15" ry="5.5"/><circle cx="-6" cy="-2" r="6"/><circle cx="4" cy="-4" r="7"/><circle cx="12" cy="0" r="5"/>
+    </g>
+    <animateTransform attributeName="transform" type="translate" dur="31s" begin="-8s" repeatCount="indefinite"
+      calcMode="spline" values="575 57;590 57;602 57;586 57;575 57" keyTimes="0;.3;.58;.82;1"
+      keySplines="0.35 0 0.65 1;0.35 0 0.65 1;0.35 0 0.65 1;0.35 0 0.65 1"/>
+  </g>
+
+  <!-- Small, light gusts drift one way and fade before they loop back. -->
+  <g fill="none" stroke="#a4cfc5" stroke-width="1.5" stroke-linecap="round">
+    <g transform="translate(-60 73)" opacity="0">
+      <path d="M0 0q8-4 15 0t16 0"/>
+      <animateTransform attributeName="transform" type="translate" from="-60 73" to="960 73" dur="13s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.55;.45;0" keyTimes="0;.08;.78;1" dur="13s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(-180 88)" opacity="0">
+      <path d="M0 0q6-3 12 0t23 0"/>
+      <animateTransform attributeName="transform" type="translate" from="-180 88" to="900 88" dur="15s" begin="-5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.42;.35;0" keyTimes="0;.1;.77;1" dur="15s" begin="-5s" repeatCount="indefinite"/>
+    </g>
+    <g transform="translate(-290 49)" opacity="0">
+      <path d="M0 0q7-3 13 0t20 0"/>
+      <animateTransform attributeName="transform" type="translate" from="-290 49" to="880 49" dur="17s" begin="-10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;.35;.27;0" keyTimes="0;.1;.78;1" dur="17s" begin="-10s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <path d="M0 111Q88 88 180 103T358 99T540 103T730 94T900 100V180H0Z" fill="#dceecf"/>
+  <path d="M0 131Q115 108 237 123T444 116T651 121T900 111V180H0Z" fill="#c7e5b4"/>
+  <path d="M0 144Q123 128 244 139T467 133T678 139T900 129V180H0Z" fill="url(#field)"/>
+
+  <!-- Tiny daisies tucked between the bunnies and the foreground grass. -->
+  <g stroke="#76b16c" stroke-width="1.2" fill="none" stroke-linecap="round">
+    <path d="M51 161v-11m0 6-4-3m4 5 4-3"/>
+    <path d="M174 166v-10m0 6-3-3m3 5 4-3"/>
+    <path d="M364 161v-11m0 6-4-3m4 5 4-3"/>
+    <path d="M658 166v-10m0 6-3-3m3 5 4-3"/>
+    <path d="M878 161v-11m0 6-4-3m4 5 4-3"/>
+  </g>
+  <g fill="#fff9fc">
+    <circle cx="51" cy="148" r="2.2"/><circle cx="48.5" cy="146.5" r="1.6"/><circle cx="53.5" cy="146.5" r="1.6"/><circle cx="51" cy="145" r="1.7"/>
+    <circle cx="174" cy="154" r="2"/><circle cx="171.8" cy="152.5" r="1.5"/><circle cx="176.2" cy="152.5" r="1.5"/>
+    <circle cx="364" cy="148" r="2.1"/><circle cx="361.5" cy="146.5" r="1.5"/><circle cx="366.5" cy="146.5" r="1.5"/>
+    <circle cx="658" cy="154" r="2"/><circle cx="655.8" cy="152.5" r="1.5"/><circle cx="660.2" cy="152.5" r="1.5"/>
+    <circle cx="878" cy="148" r="2.1"/><circle cx="875.5" cy="146.5" r="1.5"/><circle cx="880.5" cy="146.5" r="1.5"/>
+  </g>
+  <g fill="#f4ce75">
+    <circle cx="51" cy="148" r=".85"/><circle cx="174" cy="154" r=".75"/><circle cx="364" cy="148" r=".85"/><circle cx="658" cy="154" r=".75"/><circle cx="878" cy="148" r=".85"/>
+  </g>
+
+  <!-- Each rabbit hops along a short arc, pauses, turns, and hops back facing the way it moves. -->
+  
+  <g transform="translate(82 154) scale(0.57)">
+    <g>
+      <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
+        <animate attributeName="opacity" dur="4.2s" begin="0s" repeatCount="indefinite"
+          calcMode="spline" values=".22;.09;.09;.22;.22" keyTimes="0;0.18;0.28;0.46;1"
+          keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="0s" repeatCount="indefinite"
+        calcMode="spline" values="0 0;60 0;60 0;0 0;0 0" keyTimes="0;0.18;0.28;0.46;1"
+        keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+    </g>
+    <g>
+      <animateMotion dur="4.2s" begin="0s" repeatCount="indefinite" rotate="0"
+        path="M0 0 Q30 -30 60 0 Q30 -30 0 0"
+        keyPoints="0;.5;.5;1;1" keyTimes="0;0.18;0.28;0.46;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="0s" repeatCount="indefinite"
+          calcMode="discrete" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.18;.28;.46;.48;1"/>
+        <g>
+          <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="0s" repeatCount="indefinite"
+            calcMode="spline" values=".94 .90;.94 .90;.88 1.12;.96 1.08;1 1.02;1.08 .82;1 1;.94 .90;.94 .90;.88 1.12;.96 1.08;1.08 .82;1 1;1 1;.94 .90;.94 .90"
+            keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Hind feet tuck on takeoff and extend as the bunny lands. -->
+          <g transform="translate(-4.5 -5)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-25;-12;-5;18;0;0;0;-25;-12;-5;18;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q-2 1.8 -3.6 3.7 Q-.8 5 3.4 4.1 Q4.1 3.8 3.1 3.2 L.7 1.4Z"
+                fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".7" stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <circle cx="-8.1" cy="-7.3" r="1.65" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".65"/>
+          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".6"/>
+
+          <g transform="translate(3 -4.6)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;24;16;8;-16;0;0;0;24;16;8;-16;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q.6 1.5 1.5 3.8 Q2.7 4.6 4.1 3.8" fill="none" stroke="#bbb6a8" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 0 Q3 1.7 4 3.5" fill="none" stroke="#fbf2e4" stroke-width=".85" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Ears trail the head slightly instead of being rigid stickers. -->
+          <g transform="translate(4.8 -10.2)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-8;-13;-4;8;0;0;0;-8;-13;-4;8;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <g transform="translate(-1 -3.2)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0s" repeatCount="indefinite"
+                    calcMode="spline" values="0;0;-4;-8;2;8;0;0;0;-4;-8;2;8;0;0;0"
+                    keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+                  <path d="M-1 1 C-5 -3.5 -6.2 -10.1 -3.6 -12.2 C-.8 -11.8 .8 -4.3 1.5 .7Z"
+                    fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M-2 -1 C-4.3 -5 -4.8 -9 -3.5 -10.4 C-1.8 -8.2 -.6 -3.6 -.1 -.2Z"
+                    fill="#e7a8b6" opacity=".9"/>
+                  <path d="M.3 .4 C.6 -5.2 2.2 -10.7 5 -10.8 C7.4 -9.1 5.4 -3.1 2.9 1.3Z"
+                    fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M1.5 -.7 C2 -4.4 3.4 -8.5 4.7 -9 C5.6 -6.7 4.1 -2.5 2.8 .2Z"
+                    fill="#e7a8b6" opacity=".88"/>
+                </g>
+              </g>
+            </g>
+            <circle cx=".4" cy="-.1" r="4.15" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".7"/>
+            <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".6"/>
+            <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
+            <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
+            <circle cx="1.7" cy="-1.02" r=".17" fill="#fffaf4"/>
+            <path d="M4.7 .65l.85 .2-.8 .65-.6-.25Z" fill="#d88b9f"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(231 159) scale(0.72)">
+    <g>
+      <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
+        <animate attributeName="opacity" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+          calcMode="spline" values=".22;.09;.09;.22;.22" keyTimes="0;0.18;0.28;0.46;1"
+          keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+        calcMode="spline" values="0 0;60 0;60 0;0 0;0 0" keyTimes="0;0.18;0.28;0.46;1"
+        keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+    </g>
+    <g>
+      <animateMotion dur="4.2s" begin="1.08s" repeatCount="indefinite" rotate="0"
+        path="M0 0 Q30 -30 60 0 Q30 -30 0 0"
+        keyPoints="0;.5;.5;1;1" keyTimes="0;0.18;0.28;0.46;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+          calcMode="discrete" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.18;.28;.46;.48;1"/>
+        <g>
+          <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+            calcMode="spline" values=".94 .90;.94 .90;.88 1.12;.96 1.08;1 1.02;1.08 .82;1 1;.94 .90;.94 .90;.88 1.12;.96 1.08;1.08 .82;1 1;1 1;.94 .90;.94 .90"
+            keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Hind feet tuck on takeoff and extend as the bunny lands. -->
+          <g transform="translate(-4.5 -5)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-25;-12;-5;18;0;0;0;-25;-12;-5;18;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q-2 1.8 -3.6 3.7 Q-.8 5 3.4 4.1 Q4.1 3.8 3.1 3.2 L.7 1.4Z"
+                fill="#f4e6d8" stroke="#bba89a" stroke-width=".7" stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <circle cx="-8.1" cy="-7.3" r="1.65" fill="#f4e6d8" stroke="#bba89a" stroke-width=".65"/>
+          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#f4e6d8" stroke="#bba89a" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#f4e6d8" stroke="#bba89a" stroke-width=".6"/>
+
+          <g transform="translate(3 -4.6)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;24;16;8;-16;0;0;0;24;16;8;-16;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q.6 1.5 1.5 3.8 Q2.7 4.6 4.1 3.8" fill="none" stroke="#bba89a" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 0 Q3 1.7 4 3.5" fill="none" stroke="#f4e6d8" stroke-width=".85" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Ears trail the head slightly instead of being rigid stickers. -->
+          <g transform="translate(4.8 -10.2)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-8;-13;-4;8;0;0;0;-8;-13;-4;8;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <g transform="translate(-1 -3.2)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.08s" repeatCount="indefinite"
+                    calcMode="spline" values="0;0;-4;-8;2;8;0;0;0;-4;-8;2;8;0;0;0"
+                    keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+                  <path d="M-1 1 C-5 -3.5 -6.2 -10.1 -3.6 -12.2 C-.8 -11.8 .8 -4.3 1.5 .7Z"
+                    fill="#f4e6d8" stroke="#bba89a" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M-2 -1 C-4.3 -5 -4.8 -9 -3.5 -10.4 C-1.8 -8.2 -.6 -3.6 -.1 -.2Z"
+                    fill="#e6a4b3" opacity=".9"/>
+                  <path d="M.3 .4 C.6 -5.2 2.2 -10.7 5 -10.8 C7.4 -9.1 5.4 -3.1 2.9 1.3Z"
+                    fill="#f4e6d8" stroke="#bba89a" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M1.5 -.7 C2 -4.4 3.4 -8.5 4.7 -9 C5.6 -6.7 4.1 -2.5 2.8 .2Z"
+                    fill="#e6a4b3" opacity=".88"/>
+                </g>
+              </g>
+            </g>
+            <circle cx=".4" cy="-.1" r="4.15" fill="#f4e6d8" stroke="#bba89a" stroke-width=".7"/>
+            <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#f4e6d8" stroke="#bba89a" stroke-width=".6"/>
+            <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
+            <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
+            <circle cx="1.7" cy="-1.02" r=".17" fill="#fffaf4"/>
+            <path d="M4.7 .65l.85 .2-.8 .65-.6-.25Z" fill="#d88b9f"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(408 152) scale(0.54)">
+    <g>
+      <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
+        <animate attributeName="opacity" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+          calcMode="spline" values=".22;.09;.09;.22;.22" keyTimes="0;0.18;0.28;0.46;1"
+          keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+        calcMode="spline" values="0 0;60 0;60 0;0 0;0 0" keyTimes="0;0.18;0.28;0.46;1"
+        keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+    </g>
+    <g>
+      <animateMotion dur="4.2s" begin="2.24s" repeatCount="indefinite" rotate="0"
+        path="M0 0 Q30 -30 60 0 Q30 -30 0 0"
+        keyPoints="0;.5;.5;1;1" keyTimes="0;0.18;0.28;0.46;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+          calcMode="discrete" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.18;.28;.46;.48;1"/>
+        <g>
+          <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+            calcMode="spline" values=".94 .90;.94 .90;.88 1.12;.96 1.08;1 1.02;1.08 .82;1 1;.94 .90;.94 .90;.88 1.12;.96 1.08;1.08 .82;1 1;1 1;.94 .90;.94 .90"
+            keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Hind feet tuck on takeoff and extend as the bunny lands. -->
+          <g transform="translate(-4.5 -5)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-25;-12;-5;18;0;0;0;-25;-12;-5;18;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q-2 1.8 -3.6 3.7 Q-.8 5 3.4 4.1 Q4.1 3.8 3.1 3.2 L.7 1.4Z"
+                fill="#f3effa" stroke="#b9afc8" stroke-width=".7" stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <circle cx="-8.1" cy="-7.3" r="1.65" fill="#f3effa" stroke="#b9afc8" stroke-width=".65"/>
+          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#f3effa" stroke="#b9afc8" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#f3effa" stroke="#b9afc8" stroke-width=".6"/>
+
+          <g transform="translate(3 -4.6)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;24;16;8;-16;0;0;0;24;16;8;-16;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q.6 1.5 1.5 3.8 Q2.7 4.6 4.1 3.8" fill="none" stroke="#b9afc8" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 0 Q3 1.7 4 3.5" fill="none" stroke="#f3effa" stroke-width=".85" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Ears trail the head slightly instead of being rigid stickers. -->
+          <g transform="translate(4.8 -10.2)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-8;-13;-4;8;0;0;0;-8;-13;-4;8;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <g transform="translate(-1 -3.2)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.24s" repeatCount="indefinite"
+                    calcMode="spline" values="0;0;-4;-8;2;8;0;0;0;-4;-8;2;8;0;0;0"
+                    keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+                  <path d="M-1 1 C-5 -3.5 -6.2 -10.1 -3.6 -12.2 C-.8 -11.8 .8 -4.3 1.5 .7Z"
+                    fill="#f3effa" stroke="#b9afc8" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M-2 -1 C-4.3 -5 -4.8 -9 -3.5 -10.4 C-1.8 -8.2 -.6 -3.6 -.1 -.2Z"
+                    fill="#d9a8c7" opacity=".9"/>
+                  <path d="M.3 .4 C.6 -5.2 2.2 -10.7 5 -10.8 C7.4 -9.1 5.4 -3.1 2.9 1.3Z"
+                    fill="#f3effa" stroke="#b9afc8" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M1.5 -.7 C2 -4.4 3.4 -8.5 4.7 -9 C5.6 -6.7 4.1 -2.5 2.8 .2Z"
+                    fill="#d9a8c7" opacity=".88"/>
+                </g>
+              </g>
+            </g>
+            <circle cx=".4" cy="-.1" r="4.15" fill="#f3effa" stroke="#b9afc8" stroke-width=".7"/>
+            <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#f3effa" stroke="#b9afc8" stroke-width=".6"/>
+            <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
+            <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
+            <circle cx="1.7" cy="-1.02" r=".17" fill="#fffaf4"/>
+            <path d="M4.7 .65l.85 .2-.8 .65-.6-.25Z" fill="#d88b9f"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(570 160) scale(0.74)">
+    <g>
+      <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
+        <animate attributeName="opacity" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+          calcMode="spline" values=".22;.09;.09;.22;.22" keyTimes="0;0.18;0.28;0.46;1"
+          keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+        calcMode="spline" values="0 0;60 0;60 0;0 0;0 0" keyTimes="0;0.18;0.28;0.46;1"
+        keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+    </g>
+    <g>
+      <animateMotion dur="4.2s" begin="0.54s" repeatCount="indefinite" rotate="0"
+        path="M0 0 Q30 -30 60 0 Q30 -30 0 0"
+        keyPoints="0;.5;.5;1;1" keyTimes="0;0.18;0.28;0.46;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+          calcMode="discrete" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.18;.28;.46;.48;1"/>
+        <g>
+          <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+            calcMode="spline" values=".94 .90;.94 .90;.88 1.12;.96 1.08;1 1.02;1.08 .82;1 1;.94 .90;.94 .90;.88 1.12;.96 1.08;1.08 .82;1 1;1 1;.94 .90;.94 .90"
+            keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Hind feet tuck on takeoff and extend as the bunny lands. -->
+          <g transform="translate(-4.5 -5)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-25;-12;-5;18;0;0;0;-25;-12;-5;18;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q-2 1.8 -3.6 3.7 Q-.8 5 3.4 4.1 Q4.1 3.8 3.1 3.2 L.7 1.4Z"
+                fill="#fff7e8" stroke="#b9b6a8" stroke-width=".7" stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <circle cx="-8.1" cy="-7.3" r="1.65" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".65"/>
+          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".6"/>
+
+          <g transform="translate(3 -4.6)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;24;16;8;-16;0;0;0;24;16;8;-16;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q.6 1.5 1.5 3.8 Q2.7 4.6 4.1 3.8" fill="none" stroke="#b9b6a8" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 0 Q3 1.7 4 3.5" fill="none" stroke="#fff7e8" stroke-width=".85" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Ears trail the head slightly instead of being rigid stickers. -->
+          <g transform="translate(4.8 -10.2)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-8;-13;-4;8;0;0;0;-8;-13;-4;8;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <g transform="translate(-1 -3.2)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="0.54s" repeatCount="indefinite"
+                    calcMode="spline" values="0;0;-4;-8;2;8;0;0;0;-4;-8;2;8;0;0;0"
+                    keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+                  <path d="M-1 1 C-5 -3.5 -6.2 -10.1 -3.6 -12.2 C-.8 -11.8 .8 -4.3 1.5 .7Z"
+                    fill="#fff7e8" stroke="#b9b6a8" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M-2 -1 C-4.3 -5 -4.8 -9 -3.5 -10.4 C-1.8 -8.2 -.6 -3.6 -.1 -.2Z"
+                    fill="#e7a9b8" opacity=".9"/>
+                  <path d="M.3 .4 C.6 -5.2 2.2 -10.7 5 -10.8 C7.4 -9.1 5.4 -3.1 2.9 1.3Z"
+                    fill="#fff7e8" stroke="#b9b6a8" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M1.5 -.7 C2 -4.4 3.4 -8.5 4.7 -9 C5.6 -6.7 4.1 -2.5 2.8 .2Z"
+                    fill="#e7a9b8" opacity=".88"/>
+                </g>
+              </g>
+            </g>
+            <circle cx=".4" cy="-.1" r="4.15" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".7"/>
+            <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".6"/>
+            <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
+            <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
+            <circle cx="1.7" cy="-1.02" r=".17" fill="#fffaf4"/>
+            <path d="M4.7 .65l.85 .2-.8 .65-.6-.25Z" fill="#d88b9f"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(728 154) scale(0.61)">
+    <g>
+      <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
+        <animate attributeName="opacity" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+          calcMode="spline" values=".22;.09;.09;.22;.22" keyTimes="0;0.18;0.28;0.46;1"
+          keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+        calcMode="spline" values="0 0;60 0;60 0;0 0;0 0" keyTimes="0;0.18;0.28;0.46;1"
+        keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+    </g>
+    <g>
+      <animateMotion dur="4.2s" begin="1.72s" repeatCount="indefinite" rotate="0"
+        path="M0 0 Q30 -30 60 0 Q30 -30 0 0"
+        keyPoints="0;.5;.5;1;1" keyTimes="0;0.18;0.28;0.46;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+          calcMode="discrete" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.18;.28;.46;.48;1"/>
+        <g>
+          <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+            calcMode="spline" values=".94 .90;.94 .90;.88 1.12;.96 1.08;1 1.02;1.08 .82;1 1;.94 .90;.94 .90;.88 1.12;.96 1.08;1.08 .82;1 1;1 1;.94 .90;.94 .90"
+            keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Hind feet tuck on takeoff and extend as the bunny lands. -->
+          <g transform="translate(-4.5 -5)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-25;-12;-5;18;0;0;0;-25;-12;-5;18;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q-2 1.8 -3.6 3.7 Q-.8 5 3.4 4.1 Q4.1 3.8 3.1 3.2 L.7 1.4Z"
+                fill="#eee7e0" stroke="#b7aaa5" stroke-width=".7" stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <circle cx="-8.1" cy="-7.3" r="1.65" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".65"/>
+          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".6"/>
+
+          <g transform="translate(3 -4.6)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;24;16;8;-16;0;0;0;24;16;8;-16;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q.6 1.5 1.5 3.8 Q2.7 4.6 4.1 3.8" fill="none" stroke="#b7aaa5" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 0 Q3 1.7 4 3.5" fill="none" stroke="#eee7e0" stroke-width=".85" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Ears trail the head slightly instead of being rigid stickers. -->
+          <g transform="translate(4.8 -10.2)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-8;-13;-4;8;0;0;0;-8;-13;-4;8;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <g transform="translate(-1 -3.2)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="1.72s" repeatCount="indefinite"
+                    calcMode="spline" values="0;0;-4;-8;2;8;0;0;0;-4;-8;2;8;0;0;0"
+                    keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+                  <path d="M-1 1 C-5 -3.5 -6.2 -10.1 -3.6 -12.2 C-.8 -11.8 .8 -4.3 1.5 .7Z"
+                    fill="#eee7e0" stroke="#b7aaa5" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M-2 -1 C-4.3 -5 -4.8 -9 -3.5 -10.4 C-1.8 -8.2 -.6 -3.6 -.1 -.2Z"
+                    fill="#dfa4b4" opacity=".9"/>
+                  <path d="M.3 .4 C.6 -5.2 2.2 -10.7 5 -10.8 C7.4 -9.1 5.4 -3.1 2.9 1.3Z"
+                    fill="#eee7e0" stroke="#b7aaa5" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M1.5 -.7 C2 -4.4 3.4 -8.5 4.7 -9 C5.6 -6.7 4.1 -2.5 2.8 .2Z"
+                    fill="#dfa4b4" opacity=".88"/>
+                </g>
+              </g>
+            </g>
+            <circle cx=".4" cy="-.1" r="4.15" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".7"/>
+            <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".6"/>
+            <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
+            <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
+            <circle cx="1.7" cy="-1.02" r=".17" fill="#fffaf4"/>
+            <path d="M4.7 .65l.85 .2-.8 .65-.6-.25Z" fill="#d88b9f"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <g transform="translate(842 161) scale(0.67)">
+    <g>
+      <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
+        <animate attributeName="opacity" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+          calcMode="spline" values=".22;.09;.09;.22;.22" keyTimes="0;0.18;0.28;0.46;1"
+          keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      </ellipse>
+      <animateTransform attributeName="transform" type="translate" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+        calcMode="spline" values="0 0;60 0;60 0;0 0;0 0" keyTimes="0;0.18;0.28;0.46;1"
+        keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+    </g>
+    <g>
+      <animateMotion dur="4.2s" begin="2.83s" repeatCount="indefinite" rotate="0"
+        path="M0 0 Q30 -30 60 0 Q30 -30 0 0"
+        keyPoints="0;.5;.5;1;1" keyTimes="0;0.18;0.28;0.46;1" calcMode="spline" keySplines="0.45 0 0.55 1;0 0 1 1;0.45 0 0.55 1;0 0 1 1"/>
+      <g>
+        <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+          calcMode="discrete" values="1 1;1 1;-1 1;-1 1;1 1;1 1" keyTimes="0;.18;.28;.46;.48;1"/>
+        <g>
+          <animateTransform attributeName="transform" type="scale" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+            calcMode="spline" values=".94 .90;.94 .90;.88 1.12;.96 1.08;1 1.02;1.08 .82;1 1;.94 .90;.94 .90;.88 1.12;.96 1.08;1.08 .82;1 1;1 1;.94 .90;.94 .90"
+            keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+
+          <!-- Hind feet tuck on takeoff and extend as the bunny lands. -->
+          <g transform="translate(-4.5 -5)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-25;-12;-5;18;0;0;0;-25;-12;-5;18;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q-2 1.8 -3.6 3.7 Q-.8 5 3.4 4.1 Q4.1 3.8 3.1 3.2 L.7 1.4Z"
+                fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".7" stroke-linejoin="round"/>
+            </g>
+          </g>
+
+          <circle cx="-8.1" cy="-7.3" r="1.65" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".65"/>
+          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".6"/>
+
+          <g transform="translate(3 -4.6)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;24;16;8;-16;0;0;0;24;16;8;-16;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <path d="M0 0 Q.6 1.5 1.5 3.8 Q2.7 4.6 4.1 3.8" fill="none" stroke="#b8b1a4" stroke-width="1.4" stroke-linecap="round"/>
+              <path d="M2 0 Q3 1.7 4 3.5" fill="none" stroke="#fbf1e5" stroke-width=".85" stroke-linecap="round"/>
+            </g>
+          </g>
+
+          <!-- Ears trail the head slightly instead of being rigid stickers. -->
+          <g transform="translate(4.8 -10.2)">
+            <g>
+              <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+                calcMode="spline" values="0;0;-8;-13;-4;8;0;0;0;-8;-13;-4;8;0;0;0"
+                keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+              <g transform="translate(-1 -3.2)">
+                <g>
+                  <animateTransform attributeName="transform" type="rotate" dur="4.2s" begin="2.83s" repeatCount="indefinite"
+                    calcMode="spline" values="0;0;-4;-8;2;8;0;0;0;-4;-8;2;8;0;0;0"
+                    keyTimes="0;0.025;0.06;0.10;0.15;0.18;0.22;0.28;0.31;0.35;0.40;0.46;0.51;0.94;0.97;1" keySplines="0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1;0.45 0 0.55 1"/>
+                  <path d="M-1 1 C-5 -3.5 -6.2 -10.1 -3.6 -12.2 C-.8 -11.8 .8 -4.3 1.5 .7Z"
+                    fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M-2 -1 C-4.3 -5 -4.8 -9 -3.5 -10.4 C-1.8 -8.2 -.6 -3.6 -.1 -.2Z"
+                    fill="#e6a7b6" opacity=".9"/>
+                  <path d="M.3 .4 C.6 -5.2 2.2 -10.7 5 -10.8 C7.4 -9.1 5.4 -3.1 2.9 1.3Z"
+                    fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".7" stroke-linejoin="round"/>
+                  <path d="M1.5 -.7 C2 -4.4 3.4 -8.5 4.7 -9 C5.6 -6.7 4.1 -2.5 2.8 .2Z"
+                    fill="#e6a7b6" opacity=".88"/>
+                </g>
+              </g>
+            </g>
+            <circle cx=".4" cy="-.1" r="4.15" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".7"/>
+            <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".6"/>
+            <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
+            <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
+            <circle cx="1.7" cy="-1.02" r=".17" fill="#fffaf4"/>
+            <path d="M4.7 .65l.85 .2-.8 .65-.6-.25Z" fill="#d88b9f"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Grass clumps share the breeze direction, but bend at slightly different times. -->
+  
+  <g transform="translate(20 177) scale(0.65)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.4s" begin="0s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#79b56a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#79b56a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#79b56a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#79b56a" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(69 178) scale(0.78)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.9s" begin="0.55s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#6fb264" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#6fb264" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#6fb264" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#6fb264" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(134 179) scale(0.58)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.2s" begin="1.4s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#78b86a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#78b86a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#78b86a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#78b86a" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(183 179) scale(0.7)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.5s" begin="0.8s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#73b467" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#73b467" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#73b467" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#73b467" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(280 179) scale(0.64)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.1s" begin="1.8s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#6fae64" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#6fae64" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#6fae64" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#6fae64" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(334 179) scale(0.72)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.7s" begin="0.25s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#7cba70" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#7cba70" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#7cba70" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#7cba70" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(383 180) scale(0.59)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.3s" begin="1.05s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#72b265" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#72b265" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#72b265" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#72b265" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(456 179) scale(0.73)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.6s" begin="2.1s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#6eae63" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#6eae63" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#6eae63" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#6eae63" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(501 179) scale(0.62)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5s" begin="0.8s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#79b96b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#79b96b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#79b96b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#79b96b" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(618 180) scale(0.68)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.8s" begin="1.55s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#70af64" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#70af64" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#70af64" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#70af64" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(668 179) scale(0.56)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.4s" begin="0.15s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#78b66b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#78b66b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#78b66b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#78b66b" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(777 180) scale(0.7)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.5s" begin="1.3s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#6eae63" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#6eae63" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#6eae63" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#6eae63" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(803 179) scale(0.61)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.1s" begin="2.05s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#7bb96e" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#7bb96e" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#7bb96e" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#7bb96e" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(890 180) scale(0.7)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.7s" begin="0.6s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#70b064" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#70b064" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#70b064" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#70b064" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+  
+  <g transform="translate(44 181) scale(1.05)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.8s" begin="0.4s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#5ea65c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#5ea65c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#5ea65c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#5ea65c" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(158 181) scale(0.9)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.2s" begin="1.5s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#60a85c" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(314 181) scale(1)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.6s" begin="0.1s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#5ea65c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#5ea65c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#5ea65c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#5ea65c" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(432 181) scale(0.95)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5s" begin="1.1s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#60a85c" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(539 181) scale(1)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.7s" begin="1.8s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#5ba35a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#5ba35a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#5ba35a" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#5ba35a" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(691 181) scale(0.92)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.3s" begin="0.7s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#60a85c" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(762 181) scale(1)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="4.8s" begin="2.2s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#5ca35b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#5ca35b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#5ca35b" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#5ca35b" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+
+  <g transform="translate(866 181) scale(0.95)">
+    <g>
+      <animateTransform attributeName="transform" type="rotate" dur="5.1s" begin="1.3s" repeatCount="indefinite"
+        calcMode="spline" values="0;3;12;9;2;0" keyTimes="0;.12;.29;.48;.78;1" keySplines="0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1;0.25 0 0.7 1;0.35 0 0.55 1"/>
+      <path d="M0 0 Q-3 -8 -8 -14" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q1 -10 2 -17" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M0 0 Q5 -8 10 -12" fill="none" stroke="#60a85c" stroke-width="1.65" stroke-linecap="round"/>
+      <path d="M1 -1 Q-1 -5 -4 -6" fill="none" stroke="#60a85c" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>
+    </g>
+  </g>
+  <path d="M0 174Q111 168 222 174T450 173T678 175T900 170V180H0Z" fill="#a0d28c" opacity=".62"/>
 </svg>

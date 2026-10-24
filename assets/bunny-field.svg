@@ -9,6 +9,27 @@
     <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#c8e5b5"/><stop offset="1" stop-color="#a2d38f"/>
     </linearGradient>
+
+    <!-- An animated lesbian-pride gradient creates a separate, softly glowing badge. -->
+    <linearGradient id="website-pride" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="280" y2="0">
+      <stop offset="0" stop-color="#D52D00"/>
+      <stop offset=".16" stop-color="#EF7627"/>
+      <stop offset=".31" stop-color="#FF9A56"/>
+      <stop offset=".46" stop-color="#FFFFFF"/>
+      <stop offset=".61" stop-color="#D162A4"/>
+      <stop offset=".78" stop-color="#B55690"/>
+      <stop offset="1" stop-color="#A30262"/>
+      <animateTransform attributeName="gradientTransform" type="translate"
+        values="-48 0;48 0;-48 0" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="website-glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#30203f" stop-opacity=".97"/>
+      <stop offset="1" stop-color="#211827" stop-opacity=".97"/>
+    </linearGradient>
+    <filter id="website-glow" x="-30%" y="-80%" width="160%" height="260%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
     <style>
       @media (prefers-reduced-motion: reduce) {
         animate, animateMotion, animateTransform { display: none; }
@@ -18,12 +39,33 @@
   <rect width="900" height="180" rx="12" fill="url(#sky)"/>
   <circle cx="800" cy="31" r="12" fill="#ffe9b7" opacity=".88"/>
 
-  <g transform="translate(122 38)">
+  <!-- Integrated website link badge: animated lesbian colors glow behind a dark glass pill. -->
+  <g id="website-badge">
+    <rect x="11" y="10" width="258" height="49" rx="17"
+      fill="url(#website-pride)" opacity=".76" filter="url(#website-glow)">
+      <animate attributeName="opacity" values=".58;.92;.58" dur="4.8s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="15" y="13" width="250" height="43" rx="14" fill="url(#website-pride)"/>
+    <rect x="19" y="17" width="242" height="35" rx="11" fill="url(#website-glass)"
+      stroke="#fff" stroke-opacity=".13" stroke-width=".7"/>
+    <text x="29" y="39" font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+      font-size="17" font-weight="800" fill="#ffe9f7">୨୧</text>
+    <text x="53" y="29" font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+      font-size="8.5" font-weight="800" letter-spacing="1.2" fill="#f0cde8">VISIT MY WEBSITE</text>
+    <text x="53" y="43" font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+      font-size="12" font-weight="750" fill="#ffffff">lesbunny.github.io</text>
+    <text x="245" y="37" text-anchor="middle"
+      font-family="system-ui, -apple-system, Segoe UI, sans-serif"
+      font-size="16" font-weight="700" fill="#fff0fb">↗</text>
+  </g>
+
+
+  <g transform="translate(350 38)">
     <g fill="#fff" opacity=".9">
       <ellipse cx="0" cy="0" rx="20" ry="6.5"/><circle cx="-9" cy="-3" r="7.5"/><circle cx="3" cy="-5" r="9.5"/><circle cx="13" cy="-1" r="6"/>
     </g>
     <animateTransform attributeName="transform" type="translate" dur="27s" repeatCount="indefinite"
-      calcMode="spline" values="122 38;138 38;150 38;134 38;122 38" keyTimes="0;.3;.58;.82;1"
+      calcMode="spline" values="350 38;366 38;378 38;362 38;350 38" keyTimes="0;.3;.58;.82;1"
       keySplines="0.35 0 0.65 1;0.35 0 0.65 1;0.35 0 0.65 1;0.35 0 0.65 1"/>
   </g>
   <g transform="translate(575 57)">

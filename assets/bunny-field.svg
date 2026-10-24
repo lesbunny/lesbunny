@@ -79,7 +79,7 @@
 
   <!-- Each rabbit hops along a short arc, pauses, turns, and hops back facing the way it moves. -->
   
-  <g transform="translate(82 154) scale(0.57)">
+  <g transform="translate(82 166) scale(0.57)">
     <g>
       <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
         <animate attributeName="opacity" dur="4.2s" begin="0s" repeatCount="indefinite"
@@ -161,7 +161,7 @@
     </g>
   </g>
 
-  <g transform="translate(231 159) scale(0.72)">
+  <g transform="translate(231 170) scale(0.72)">
     <g>
       <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
         <animate attributeName="opacity" dur="4.2s" begin="1.08s" repeatCount="indefinite"
@@ -243,7 +243,7 @@
     </g>
   </g>
 
-  <g transform="translate(408 152) scale(0.54)">
+  <g transform="translate(408 163) scale(0.54)">
     <g>
       <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
         <animate attributeName="opacity" dur="4.2s" begin="2.24s" repeatCount="indefinite"
@@ -325,7 +325,7 @@
     </g>
   </g>
 
-  <g transform="translate(570 160) scale(0.74)">
+  <g transform="translate(570 172) scale(0.74)">
     <g>
       <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
         <animate attributeName="opacity" dur="4.2s" begin="0.54s" repeatCount="indefinite"
@@ -407,7 +407,7 @@
     </g>
   </g>
 
-  <g transform="translate(728 154) scale(0.61)">
+  <g transform="translate(728 166) scale(0.61)">
     <g>
       <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
         <animate attributeName="opacity" dur="4.2s" begin="1.72s" repeatCount="indefinite"
@@ -489,7 +489,7 @@
     </g>
   </g>
 
-  <g transform="translate(842 161) scale(0.67)">
+  <g transform="translate(842 171) scale(0.67)">
     <g>
       <ellipse cx="0" cy=".7" rx="8.5" ry="1.25" fill="#648d5c" opacity=".2">
         <animate attributeName="opacity" dur="4.2s" begin="2.83s" repeatCount="indefinite"

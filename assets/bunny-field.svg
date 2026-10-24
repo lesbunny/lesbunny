@@ -12,32 +12,39 @@
 
     <!-- A thin animated lesbian-pride stroke. The gradient completes a full 360-degree loop. -->
     <linearGradient id="website-pride" gradientUnits="userSpaceOnUse" x1="15" y1="35" x2="265" y2="35">
-      <stop offset="0" stop-color="#D52D00"/>
-      <stop offset=".16" stop-color="#EF7627"/>
-      <stop offset=".31" stop-color="#FF9A56"/>
-      <stop offset=".46" stop-color="#FFFFFF"/>
-      <stop offset=".61" stop-color="#D162A4"/>
-      <stop offset=".78" stop-color="#B55690"/>
-      <stop offset="1" stop-color="#A30262"/>
+      <stop offset="0" stop-color="#E6A08E"/>
+      <stop offset=".16" stop-color="#F1B48F"/>
+      <stop offset=".31" stop-color="#F8C8AD"/>
+      <stop offset=".46" stop-color="#FFF3ED"/>
+      <stop offset=".61" stop-color="#E4A2C4"/>
+      <stop offset=".78" stop-color="#C98BB0"/>
+      <stop offset="1" stop-color="#A96894"/>
       <animateTransform attributeName="gradientTransform" type="rotate"
         values="0 140 35;360 140 35" dur="3.4s" repeatCount="indefinite"/>
     </linearGradient>
     <linearGradient id="website-glass" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#493951" stop-opacity=".88"/>
-      <stop offset="1" stop-color="#30263a" stop-opacity=".91"/>
+      <stop offset="0" stop-color="#514457" stop-opacity=".86"/>
+      <stop offset="1" stop-color="#342b3e" stop-opacity=".89"/>
     </linearGradient>
-    <!-- A real text halo: blur the glyph alpha, tint it, then lay crisp lettering over it. -->
-    <filter id="website-text-glow" x="-80%" y="-220%" width="260%" height="540%"
+    <!-- A broad, non-rectangular bloom behind the badge; this is light, not an outline. -->
+    <filter id="website-ambient-blur" x="-70%" y="-180%" width="240%" height="460%"
       color-interpolation-filters="sRGB">
-      <feGaussianBlur in="SourceAlpha" stdDeviation="3.6" result="wide-blur"/>
-      <feFlood flood-color="#ed8ccf" flood-opacity=".54" result="wide-color"/>
-      <feComposite in="wide-color" in2="wide-blur" operator="in" result="wide-glow"/>
-      <feGaussianBlur in="SourceAlpha" stdDeviation="1.25" result="near-blur"/>
-      <feFlood flood-color="#ffd0ed" flood-opacity=".68" result="near-color"/>
-      <feComposite in="near-color" in2="near-blur" operator="in" result="near-glow"/>
+      <feGaussianBlur stdDeviation="9.5"/>
+    </filter>
+    <!-- A soft multi-colour halo around the actual letter shapes, with crisp text merged back on top. -->
+    <filter id="website-text-glow" x="-90%" y="-240%" width="280%" height="580%"
+      color-interpolation-filters="sRGB">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2.8" result="text-blur"/>
+      <feFlood flood-color="#e9a0bf" flood-opacity=".72" result="rose-colour"/>
+      <feComposite in="rose-colour" in2="text-blur" operator="in" result="rose-halo"/>
+      <feFlood flood-color="#f4b39a" flood-opacity=".48" result="peach-colour"/>
+      <feComposite in="peach-colour" in2="text-blur" operator="in" result="peach-halo"/>
+      <feFlood flood-color="#f4d3e5" flood-opacity=".5" result="pink-colour"/>
+      <feComposite in="pink-colour" in2="text-blur" operator="in" result="pink-halo"/>
       <feMerge>
-        <feMergeNode in="wide-glow"/>
-        <feMergeNode in="near-glow"/>
+        <feMergeNode in="peach-halo"/>
+        <feMergeNode in="rose-halo"/>
+        <feMergeNode in="pink-halo"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
@@ -51,17 +58,30 @@
   <circle cx="800" cy="31" r="12" fill="#ffe9b7" opacity=".88"/>
 
   <!-- The website link sits gently in the meadow; only its hairline pride stroke moves. -->
+  <!-- Soft lesbian-pride light blooms into the sky; the shapes overlap loosely, never forming a frame. -->
+  <g id="website-ambient-glow" filter="url(#website-ambient-blur)">
+    <ellipse cx="37" cy="22" rx="45" ry="25" fill="#e98f83" opacity=".66"/>
+    <ellipse cx="78" cy="43" rx="59" ry="29" fill="#f1b392" opacity=".56"/>
+    <ellipse cx="119" cy="25" rx="55" ry="31" fill="#fff0e9" opacity=".68"/>
+    <ellipse cx="164" cy="42" rx="60" ry="30" fill="#df8eb8" opacity=".62"/>
+    <ellipse cx="205" cy="24" rx="46" ry="26" fill="#b96d9e" opacity=".64"/>
+    <animateTransform attributeName="transform" type="translate"
+      values="0 0;4 1;0 0;-3 -1;0 0" keyTimes="0;.25;.5;.75;1"
+      keySplines=".35 0 .65 1;.35 0 .65 1;.35 0 .65 1;.35 0 .65 1"
+      calcMode="spline" dur="7.2s" repeatCount="indefinite"/>
+  </g>
+
   <g id="website-badge" transform="translate(3 3) scale(.8)">
     <rect x="15" y="13" width="250" height="43" rx="14"
-      fill="url(#website-glass)" stroke="url(#website-pride)" stroke-width=".8" stroke-opacity=".9"/>
+      fill="url(#website-glass)" stroke="url(#website-pride)" stroke-width=".6" stroke-opacity=".62"/>
     <path d="M29 18h219" fill="none" stroke="#fff" stroke-opacity=".055" stroke-width=".6" stroke-linecap="round"/>
     <text x="29" y="39" font-family="system-ui, -apple-system, Segoe UI, sans-serif"
       font-size="17" font-weight="800" fill="#ffe9f7">୨୧</text>
     <text x="53" y="29" font-family="system-ui, -apple-system, Segoe UI, sans-serif"
-      font-size="8.5" font-weight="800" letter-spacing="1.2" fill="#f0cde8"
+      font-size="9" font-weight="800" letter-spacing="1.1" fill="#f5dce9"
       filter="url(#website-text-glow)">VISIT MY WEBSITE</text>
     <text x="53" y="43" font-family="system-ui, -apple-system, Segoe UI, sans-serif"
-      font-size="12" font-weight="750" fill="#ffffff"
+      font-size="12.5" font-weight="750" fill="#fff9fd"
       filter="url(#website-text-glow)">lesbunny.github.io</text>
     <text x="245" y="37" text-anchor="middle"
       font-family="system-ui, -apple-system, Segoe UI, sans-serif"
@@ -165,8 +185,8 @@
           </g>
 
           <circle cx="-8.1" cy="-7.3" r="1.65" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".65"/>
-          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".75"/>
-          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".6"/>
+          <ellipse cx="-1.7" cy="-7.8" rx="8.1" ry="6.6" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.4" rx="3.75" ry="3.35" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".6"/>
 
           <g transform="translate(3 -4.6)">
             <g>
@@ -200,7 +220,7 @@
                 </g>
               </g>
             </g>
-            <circle cx=".4" cy="-.1" r="4.15" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".7"/>
+            <circle cx=".4" cy="-.1" r="4.4" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".7"/>
             <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#fbf2e4" stroke="#bbb6a8" stroke-width=".6"/>
             <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
             <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
@@ -247,8 +267,8 @@
           </g>
 
           <circle cx="-8.1" cy="-7.3" r="1.65" fill="#f4e6d8" stroke="#bba89a" stroke-width=".65"/>
-          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#f4e6d8" stroke="#bba89a" stroke-width=".75"/>
-          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#f4e6d8" stroke="#bba89a" stroke-width=".6"/>
+          <ellipse cx="-1.7" cy="-7.8" rx="8.1" ry="6.6" fill="#f4e6d8" stroke="#bba89a" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.4" rx="3.75" ry="3.35" fill="#f4e6d8" stroke="#bba89a" stroke-width=".6"/>
 
           <g transform="translate(3 -4.6)">
             <g>
@@ -282,7 +302,7 @@
                 </g>
               </g>
             </g>
-            <circle cx=".4" cy="-.1" r="4.15" fill="#f4e6d8" stroke="#bba89a" stroke-width=".7"/>
+            <circle cx=".4" cy="-.1" r="4.4" fill="#f4e6d8" stroke="#bba89a" stroke-width=".7"/>
             <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#f4e6d8" stroke="#bba89a" stroke-width=".6"/>
             <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
             <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
@@ -329,8 +349,8 @@
           </g>
 
           <circle cx="-8.1" cy="-7.3" r="1.65" fill="#f3effa" stroke="#b9afc8" stroke-width=".65"/>
-          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#f3effa" stroke="#b9afc8" stroke-width=".75"/>
-          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#f3effa" stroke="#b9afc8" stroke-width=".6"/>
+          <ellipse cx="-1.7" cy="-7.8" rx="8.1" ry="6.6" fill="#f3effa" stroke="#b9afc8" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.4" rx="3.75" ry="3.35" fill="#f3effa" stroke="#b9afc8" stroke-width=".6"/>
 
           <g transform="translate(3 -4.6)">
             <g>
@@ -364,7 +384,7 @@
                 </g>
               </g>
             </g>
-            <circle cx=".4" cy="-.1" r="4.15" fill="#f3effa" stroke="#b9afc8" stroke-width=".7"/>
+            <circle cx=".4" cy="-.1" r="4.4" fill="#f3effa" stroke="#b9afc8" stroke-width=".7"/>
             <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#f3effa" stroke="#b9afc8" stroke-width=".6"/>
             <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
             <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
@@ -411,8 +431,8 @@
           </g>
 
           <circle cx="-8.1" cy="-7.3" r="1.65" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".65"/>
-          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".75"/>
-          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".6"/>
+          <ellipse cx="-1.7" cy="-7.8" rx="8.1" ry="6.6" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.4" rx="3.75" ry="3.35" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".6"/>
 
           <g transform="translate(3 -4.6)">
             <g>
@@ -446,7 +466,7 @@
                 </g>
               </g>
             </g>
-            <circle cx=".4" cy="-.1" r="4.15" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".7"/>
+            <circle cx=".4" cy="-.1" r="4.4" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".7"/>
             <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#fff7e8" stroke="#b9b6a8" stroke-width=".6"/>
             <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
             <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
@@ -493,8 +513,8 @@
           </g>
 
           <circle cx="-8.1" cy="-7.3" r="1.65" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".65"/>
-          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".75"/>
-          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".6"/>
+          <ellipse cx="-1.7" cy="-7.8" rx="8.1" ry="6.6" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.4" rx="3.75" ry="3.35" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".6"/>
 
           <g transform="translate(3 -4.6)">
             <g>
@@ -528,7 +548,7 @@
                 </g>
               </g>
             </g>
-            <circle cx=".4" cy="-.1" r="4.15" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".7"/>
+            <circle cx=".4" cy="-.1" r="4.4" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".7"/>
             <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#eee7e0" stroke="#b7aaa5" stroke-width=".6"/>
             <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
             <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
@@ -575,8 +595,8 @@
           </g>
 
           <circle cx="-8.1" cy="-7.3" r="1.65" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".65"/>
-          <ellipse cx="-1.6" cy="-7.3" rx="7.3" ry="4.55" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".75"/>
-          <ellipse cx="-4.3" cy="-6.2" rx="3.35" ry="3.05" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".6"/>
+          <ellipse cx="-1.7" cy="-7.8" rx="8.1" ry="6.6" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".75"/>
+          <ellipse cx="-4.3" cy="-6.4" rx="3.75" ry="3.35" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".6"/>
 
           <g transform="translate(3 -4.6)">
             <g>
@@ -610,7 +630,7 @@
                 </g>
               </g>
             </g>
-            <circle cx=".4" cy="-.1" r="4.15" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".7"/>
+            <circle cx=".4" cy="-.1" r="4.4" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".7"/>
             <ellipse cx="3.2" cy="1.1" rx="2.05" ry="1.42" fill="#fbf1e5" stroke="#b8b1a4" stroke-width=".6"/>
             <ellipse cx="2.4" cy="2.05" rx="1.05" ry=".48" fill="#eab8c0" opacity=".65"/>
             <circle cx="1.55" cy="-.85" r=".55" fill="#554c4a"/>
